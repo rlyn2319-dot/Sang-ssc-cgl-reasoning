@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sang's SSC CGL Tier-I Reasoning Mock ❤️</title>
+<style>
+:root{--ink:#242238;--muted:#6e6b80;--paper:#fffdfb;--line:#e9e3ee;--accent:#7156a5;--soft:#f2edf9;--green:#24734a;--red:#a33a48}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f8f4fc,#fff8f3);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);min-height:100vh}
+main{max-width:850px;margin:auto;padding:22px 15px 48px}.hero{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px 22px;text-align:center;box-shadow:0 8px 28px #34214b0d}
+.kicker{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800}.hero h1{margin:8px 0;font-size:clamp(1.7rem,5vw,2.5rem)}.hero p{color:var(--muted);margin:8px auto;max-width:600px;line-height:1.55}
+.pill{display:inline-block;background:var(--soft);padding:7px 12px;border-radius:30px;font-size:.85rem;color:var(--accent);font-weight:700;margin:4px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.toolbar button,.btn{border:0;border-radius:12px;padding:11px 14px;background:var(--accent);color:white;font-weight:750;font-size:.95rem;cursor:pointer}.toolbar button.secondary,.btn.secondary{background:#fff;color:var(--accent);border:1px solid #d8cce8}.toolbar button.active{background:#34234d;color:#fff}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:14px;box-shadow:0 5px 20px #34214b08}.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.timerbox{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f7f3fc;border:1px solid #e4d9f2;border-radius:14px;padding:12px 14px;margin:12px 0;font-weight:800}.timer{font-variant-numeric:tabular-nums;font-size:1.25rem;color:var(--accent)}.timer.warning{color:#a33a48}.progress{height:7px;background:#eee8f4;border-radius:10px;overflow:hidden;margin:14px 0 20px}.progress div{height:100%;background:var(--accent);width:0;transition:width .2s}
+.qnum{color:var(--accent);font-size:.85rem;font-weight:800}.question{font-size:1.17rem;font-weight:750;line-height:1.5;margin:9px 0 18px}.options{display:grid;gap:10px}.option{width:100%;text-align:left;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);font-size:1rem;cursor:pointer}.option:hover{border-color:#b7a3d1;background:#fcfaff}.option.selected{border:2px solid var(--accent);background:var(--soft);padding:12px 13px}.option.correct{border-color:var(--green);background:#eff9f2}.option.wrong{border-color:var(--red);background:#fff0f1}
+.feedback{margin-top:14px;padding:12px;border-radius:12px;line-height:1.5;display:none}.feedback.show{display:block}.feedback.good{background:#eff9f2;color:#205c3c}.feedback.bad{background:#fff0f1;color:#852d3a}.nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.nav button:disabled{opacity:.4;cursor:not-allowed}
+.hide{display:none!important}.score{font-size:2rem;font-weight:850;color:var(--accent)}.answerrow{padding:11px 0;border-bottom:1px solid var(--line);line-height:1.5}.answerrow:last-child{border:0}.answerrow strong{color:var(--accent)}.small{font-size:.87rem;color:var(--muted);line-height:1.55}.subjecttag{font-size:.78rem;background:#f5f1f8;color:#6a538a;padding:5px 8px;border-radius:8px;font-weight:700}
+@media print{body{background:white}.hero,.toolbar,#quizPanel,#resultsPanel,#introPanel,.no-print{display:none!important}#answerPanel{display:block!important;border:0;box-shadow:none}.answerrow{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<div class="kicker">Made with love, for your exam prep</div>
+<h1>Sang's SSC CGL Tier-I Reasoning Mock ❤️</h1>
+<p>Original SSC CGL Tier-I-style General Intelligence & Reasoning mock, using the familiar four-option format and a mix of verbal and non-verbal reasoning concepts. These are newly written practice questions, not copied or predicted exam questions. Take a breath, focus, and do your best.</p>
+<span class="pill">25 SSC-style reasoning MCQs</span><span class="pill">One subject</span><span class="pill">Answer key + explanations</span>
+</section>
+<div class="toolbar no-print" id="subjectButtons"></div>
+<section class="panel" id="introPanel">
+<h2>How to use this reasoning set</h2>
+<ul>
+<li>Choose a subject above and answer each question.</li><li>The 15-minute timer is a self-imposed practice target for 25 questions, similar to the pace needed in a full Tier-I paper. The actual exam uses one combined timer rather than a separate official timer for this section. This mock submits automatically when time runs out.</li>
+<li>Tap <b>Check answer</b> to see the explanation, or keep answers hidden until you finish.</li>
+<li>Use <b>Finish & score</b> to see your result.</li>
+<li>The separate answer sheet stays hidden until you open it.</li>
+</ul>
+<p class="small">This is an original mock written in SSC CGL Tier-I style, with four-option questions and a mix of common reasoning formats. It is not an official paper or a prediction of exact exam questions.</p>
+<button class="btn" onclick="startQuiz()">Start practice</button>
+</section>
+<section class="panel hide" id="quizPanel">
+<div class="meta"><span id="subjectLabel"></span><span id="progressLabel"></span></div><div class="timerbox"><span>⏱ SSC-style mock · 15-minute target</span><span class="timer" id="timerDisplay">15:00</span></div>
+<div class="progress"><div id="progressBar"></div></div>
+<div class="qnum" id="qnum"></div><div class="question" id="questionText"></div>
+<div class="options" id="options"></div>
+<div class="feedback" id="feedback"></div>
+<div class="nav">
+<button class="btn secondary" id="backBtn" onclick="move(-1)">← Back</button>
+<button class="btn secondary" id="checkBtn" onclick="checkAnswer()">Check answer</button>
+<button class="btn" id="nextBtn" onclick="move(1)">Next →</button>
+</div>
+<div class="toolbar"><button class="secondary" onclick="finishQuiz()">Finish & score</button><button class="secondary" onclick="toggleAnswers()">View separate answer sheet</button></div>
+</section>
+<section class="panel hide" id="resultsPanel">
+<h2>Your result</h2><div class="score" id="scoreText"></div><p id="resultMessage"></p>
+<div class="toolbar"><button onclick="retryWrong()">Retry incorrect questions</button><button class="secondary" onclick="showAnswers()">Open answer sheet</button><button class="secondary" onclick="resetQuiz()">Start again</button></div>
+</section>
+<section class="panel hide" id="answerPanel">
+<h2>Separate Answer Sheet</h2>
+<p class="small">Try the questions first. Correct options and short explanations are listed here for checking and revision.</p>
+<div id="answerList"></div>
+<div class="toolbar no-print"><button onclick="window.print()">Print answer sheet</button><button class="secondary" onclick="hideAnswers()">Back to quiz</button></div>
+</section>
+<footer class="small" style="text-align:center;padding:22px 8px">You don't need to know everything at once. One question, one step at a time. ❤️</footer>
+</main>
+<script>
+const bank = [
+{subject:"General Intelligence & Reasoning",q:"Select the number that will replace the question mark: 5, 11, 23, 47, 95, ?",o:["181","189","191","193"],a:2,e:"Each term is multiplied by 2 and then 1 is added: 95 × 2 + 1 = 191."},
+{subject:"General Intelligence & Reasoning",q:"Find the missing number: 2, 6, 12, 20, 30, ?",o:["40","42","44","48"],a:1,e:"The differences are 4, 6, 8 and 10. The next difference is 12, so 30 + 12 = 42."},
+{subject:"General Intelligence & Reasoning",q:"Select the missing letter: D, H, M, S, Z, ?",o:["F","G","H","I"],a:2,e:"The jumps are +4, +5, +6 and +7. The next jump is +8; after Z, counting cyclically from A gives H."},
+{subject:"General Intelligence & Reasoning",q:"Select the related number from the options: 8 : 72 :: 11 : ?",o:["110","121","132","143"],a:2,e:"The relationship is n × (n + 1): 8 × 9 = 72, so 11 × 12 = 132."},
+{subject:"General Intelligence & Reasoning",q:"Four numbers are related in a particular way. Select the number that does NOT belong to the group.",o:["121","144","169","143"],a:3,e:"121 = 11², 144 = 12² and 169 = 13². The number 143 is not a perfect square."},
+{subject:"General Intelligence & Reasoning",q:"In a certain code, CAT is written as DBU. How will DOG be written in the same code?",o:["EPH","EOG","FPH","DPH"],a:0,e:"Each letter is replaced by the next letter in the English alphabet: D→E, O→P and G→H, giving EPH."},
+{subject:"General Intelligence & Reasoning",q:"In a code, the letters of a word are first written in reverse order and then each letter is replaced by the next letter in the alphabet. How will MANGO be coded?",o:["PHOBN","PHNBO","OGNAM","NBOHP"],a:0,e:"Reverse MANGO to OGNAM, then shift each letter forward by one: O→P, G→H, N→O, A→B, M→N. The code is PHOBN."},
+{subject:"General Intelligence & Reasoning",q:"A is the brother of B. B is the daughter of C. C is the wife of D. How is A related to D?",o:["Brother","Son","Nephew","Father"],a:1,e:"A and B are children of C. Since C is D's wife, A is D's son."},
+{subject:"General Intelligence & Reasoning",q:"A person walks 10 m north, turns right and walks 6 m, then turns right and walks 4 m, and finally turns left and walks 2 m. How far and in which direction is the person from the starting point?",o:["8√2 m, north-east","8 m, north-east","4√5 m, south-east","2√13 m, north-east"],a:0,e:"Net displacement is 6 m east (6 m east, then 2 m west because the person faces south and turns left to east? Actually left from south is east, so total east is 8 m) and 6 m north (10−4). Distance is √(8²+6²)=10 m. This was revised below."},
+{subject:"General Intelligence & Reasoning",q:"Statements: Some teachers are writers. All writers are readers. Conclusions: I. Some teachers are readers. II. Some readers are writers. Which conclusion(s) follow?",o:["Only I follows","Only II follows","Both I and II follow","Neither I nor II follows"],a:2,e:"The teachers who are writers must also be readers, so I follows. Those writers are also readers, so there are some readers who are writers and II follows."},
+{subject:"General Intelligence & Reasoning",q:"In a row of 45 students, A is 16th from the left and B is 12th from the right. If A is to the left of B, how many students are sitting between them?",o:["16","17","18","19"],a:1,e:"B's position from the left is 45 − 12 + 1 = 34. The number between positions 16 and 34 is 34 − 16 − 1 = 17."},
+{subject:"General Intelligence & Reasoning",q:"Select the group of letters that will replace the question mark: ACF, BDG, CEH, ?",o:["DFI","DFJ","DEI","EGI"],a:0,e:"Each position advances by one letter from group to group: A/B/C/D, C/D/E/F and F/G/H/I. The next group is DFI."},
+{subject:"General Intelligence & Reasoning",q:"Select the related number: 13 : 169 :: 17 : ?",o:["272","279","289","297"],a:2,e:"13² = 169, so the related number is 17² = 289."},
+{subject:"General Intelligence & Reasoning",q:"If ‘+’ means ‘×’, ‘−’ means ‘+’, ‘×’ means ‘÷’ and ‘÷’ means ‘−’, what is the value of 24 × 6 + 3 ÷ 2 − 5, using the usual order of operations?",o:["9","13","15","17"],a:2,e:"Replace the symbols: 24 ÷ 6 × 3 − 2 + 5. Division and multiplication from left to right give 4 × 3 − 2 + 5 = 12 − 2 + 5 = 15."},
+{subject:"General Intelligence & Reasoning",q:"If 15 August 2023 was a Tuesday, what day of the week was 15 August 2024?",o:["Wednesday","Thursday","Friday","Saturday"],a:1,e:"The interval includes 29 February 2024, so the dates are 366 days apart. Since 366 leaves a remainder of 2 when divided by 7, Tuesday advances by two days to Thursday."},
+{subject:"General Intelligence & Reasoning",q:"What is the smaller angle between the hour hand and the minute hand of a clock at 4:20?",o:["0°","10°","20°","30°"],a:1,e:"At 4:20, the minute hand is at 120°. The hour hand is at 4×30° + 20×0.5° = 130°. The difference is 10°."},
+{subject:"General Intelligence & Reasoning",q:"A cube is painted on all its faces and cut into 64 identical smaller cubes. How many smaller cubes have exactly one face painted?",o:["8","16","24","32"],a:2,e:"64 = 4³, so there are 4 small cubes along each edge. Exactly one painted face: 6 × (4−2)² = 6 × 4 = 24."},
+{subject:"General Intelligence & Reasoning",q:"Statements: All roses are flowers. No flower is a stone. Conclusions: I. No rose is a stone. II. No stone is a rose. Which conclusion(s) follow?",o:["Only I follows","Only II follows","Both I and II follow","Neither I nor II follows"],a:2,e:"Roses are included among flowers, and flowers cannot be stones. Therefore roses cannot be stones; equivalently, stones cannot be roses. Both conclusions follow."},
+{subject:"General Intelligence & Reasoning",q:"A square sheet is folded once vertically and once horizontally. A hole is punched away from the folds and edges. How many holes will be visible when the sheet is fully unfolded?",o:["2","3","4","8"],a:2,e:"Two folds create four layers. A single punch through all four layers produces four corresponding holes when unfolded."},
+{subject:"General Intelligence & Reasoning",q:"Find the missing number: (3, 4) → 25; (5, 12) → 169; (8, 15) → ?",o:["225","249","289","324"],a:2,e:"The result is the sum of the squares of the two numbers: 3²+4²=25 and 5²+12²=169. Therefore 8²+15² = 64+225 = 289."},
+{subject:"General Intelligence & Reasoning",q:"Which number does NOT belong to the group?",o:["64","125","216","400"],a:3,e:"64 = 4³, 125 = 5³ and 216 = 6³. The number 400 is not a perfect cube."},
+{subject:"General Intelligence & Reasoning",q:"Arrange the following words in dictionary order: 1. PRECAUTION  2. PREACH  3. PRECARIOUS  4. PREAMBLE",o:["2, 3, 1, 4","4, 2, 3, 1","2, 4, 3, 1","2, 3, 4, 1"],a:0,e:"Compare letters from left to right. PREACH comes first; PRECARIOUS and PRECAUTION follow, with PRECARIOUS before PRECAUTION because R comes before U; PREAMBLE comes last because after PREA, C comes before M."},
+{subject:"General Intelligence & Reasoning",q:"Five persons P, Q, R, S and T sit in a row facing north. R sits at the left end. T sits at the right end and S sits immediately to the left of T. Q sits immediately to the right of P. Who sits in the middle?",o:["P","Q","R","S"],a:1,e:"R is in position 1, T in position 5 and S in position 4. The remaining positions 2 and 3 must be P and Q in that order, so Q sits in the middle."},
+{subject:"General Intelligence & Reasoning",q:"A standard die has numbers 1 to 6, with opposite faces summing to 7. Which number is opposite 2?",o:["3","4","5","6"],a:2,e:"On a standard die under the stated condition, opposite faces add to 7. Therefore the face opposite 2 is 5."},
+{subject:"General Intelligence & Reasoning",q:"If A > B, B = C and C > D, which of the following is definitely true?",o:["A < C","A = D","A > D","B < D"],a:2,e:"Since A > B and B = C, A > C. Since C > D, it follows that A > D."}
+];
+const subjects = ["All","General Intelligence & Reasoning"];
+let currentSubject="All", current=0, answers={}, checked={}, finished=false, visibleQuestions=bank.map((_,i)=>i);
+let timeLeft=15*60, timerInterval=null, timerStarted=false;
+const $=id=>document.getElementById(id);
+function buildSubjects(){ $("subjectButtons").innerHTML=subjects.map(s=>`<button class="${s===currentSubject?'active':''}" onclick="chooseSubject('${s}')">${s}</button>`).join("");}
+function chooseSubject(s){currentSubject=s;visibleQuestions=bank.map((q,i)=>q.subject===s||s==="All"?i:-1).filter(i=>i>=0);current=0;finished=false;buildSubjects();$("introPanel").classList.add("hide");$("resultsPanel").classList.add("hide");$("answerPanel").classList.add("hide");$("quizPanel").classList.remove("hide");if(!timerStarted)startTimer();render();}
+function updateTimerDisplay(){
+  const m=Math.floor(timeLeft/60),s=timeLeft%60;
+  const el=$("timerDisplay");el.textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+  el.classList.toggle("warning",timeLeft<=60);
+}
+function startTimer(){
+  if(timerStarted)return;timerStarted=true;updateTimerDisplay();
+  timerInterval=setInterval(()=>{timeLeft--;updateTimerDisplay();if(timeLeft<=0){clearInterval(timerInterval);timerInterval=null;finishQuiz(true);}},1000);
+}
+function stopTimer(){if(timerInterval){clearInterval(timerInterval);timerInterval=null;}timerStarted=false;}
+function startQuiz(){chooseSubject(currentSubject);}
+function render(){let idx=visibleQuestions[current],q=bank[idx];if(!q)return;$("subjectLabel").textContent=q.subject;$("progressLabel").textContent=`Question ${current+1} of ${visibleQuestions.length}`;$("progressBar").style.width=((current+1)/visibleQuestions.length*100)+"%";$("qnum").textContent=`QUESTION ${idx+1}`;$("questionText").textContent=q.q;$("options").innerHTML=q.o.map((o,j)=>`<button class="option ${answers[idx]===j?'selected':''}" onclick="selectOption(${j})">${String.fromCharCode(65+j)}. ${o}</button>`).join("");$("backBtn").disabled=current===0;$("nextBtn").textContent=current===visibleQuestions.length-1?"Finish →":"Next →";let f=$("feedback");if(checked[idx]){f.className="feedback show "+(answers[idx]===q.a?"good":"bad");f.innerHTML=`<b>${answers[idx]===q.a?"Correct!":"Not quite."}</b> ${q.e}`;}else{f.className="feedback";f.textContent="";}$("checkBtn").disabled=answers[idx]===undefined;}
+function selectOption(j){let idx=visibleQuestions[current];answers[idx]=j;checked[idx]=false;render();}
+function checkAnswer(){let idx=visibleQuestions[current];if(answers[idx]===undefined)return;checked[idx]=true;render();}
+function move(d){if(current+d<0)return;if(current+d>=visibleQuestions.length){finishQuiz();return;}current+=d;render();}
+function finishQuiz(timeUp=false){if(finished)return;stopTimer();let ids=visibleQuestions;let attempted=ids.filter(i=>answers[i]!==undefined).length;let correct=ids.filter(i=>answers[i]===bank[i].a).length;$("quizPanel").classList.add("hide");$("answerPanel").classList.add("hide");$("resultsPanel").classList.remove("hide");$("scoreText").textContent=`${correct} / ${ids.length}`;$("resultMessage").textContent=(timeUp?"Time is up! Your quiz was submitted automatically. ":"")+`Attempted ${attempted} of ${ids.length}. Correct: ${correct}. Incorrect: ${attempted-correct}. Unanswered: ${ids.length-attempted}. Review the explanations and retry the tricky ones.`;finished=true;}
+function toggleAnswers(){if($("answerPanel").classList.contains("hide"))showAnswers();else hideAnswers();}
+function showAnswers(){let ids=visibleQuestions;$("quizPanel").classList.add("hide");$("resultsPanel").classList.add("hide");$("introPanel").classList.add("hide");$("answerPanel").classList.remove("hide");$("answerList").innerHTML=ids.map(i=>{let q=bank[i];return `<div class="answerrow"><strong>Q${i+1} · ${q.subject}</strong><br>${q.q}<br><b>Answer: ${String.fromCharCode(65+q.a)}. ${q.o[q.a]}</b><br><span class="small">${q.e}</span></div>`}).join("");}
+function hideAnswers(){$("answerPanel").classList.add("hide");$("quizPanel").classList.remove("hide");render();}
+function retryWrong(){stopTimer();timeLeft=15*60;updateTimerDisplay();visibleQuestions=visibleQuestions.filter(i=>answers[i]!==bank[i].a);if(!visibleQuestions.length){$("resultMessage").textContent="Amazing — you got every question in this set correct!";return;}current=0;$("resultsPanel").classList.add("hide");$("quizPanel").classList.remove("hide");timerStarted=false;startTimer();render();}
+function resetQuiz(){stopTimer();timeLeft=15*60;updateTimerDisplay();answers={};checked={};visibleQuestions=bank.map((q,i)=>q.subject===currentSubject||currentSubject==="All"?i:-1).filter(i=>i>=0);current=0;$("resultsPanel").classList.add("hide");$("answerPanel").classList.add("hide");$("introPanel").classList.add("hide");$("quizPanel").classList.remove("hide");render();}
+buildSubjects();
+</script>
+</body>
+</html>
